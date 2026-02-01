@@ -28,6 +28,7 @@ Met welk commando kun je alle `.java` files op het systeem tonen die voldoen aan
 1. ze zijn de afgelopen week aangepast
 2. ze bevatten de string "Main"
 
+<img width="1694" height="100" alt="image" src="https://github.com/user-attachments/assets/009b0c67-706f-4935-8271-43fd0134ef56" />
 
 ## 1 b) Links:
 Wat is het verschil tussen een symbolische link en een harde link?\
@@ -168,5 +169,6 @@ Waar bevindt zich het uitvoerbare bestand (`executable`) voor `apache2`? Leg uit
 
 ## 5 e) Locatie van de `DocumentRoot` variabele
 In welk configuratiebestand wordt de `DocumentRoot`-variabele voor `apache2` gedefinieerd? Beschrijf kort hoe je dit bestand kunt vinden en openen.
+
 
 
