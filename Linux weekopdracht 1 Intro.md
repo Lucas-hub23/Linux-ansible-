@@ -28,25 +28,36 @@ Met welk commando kun je alle `.java` files op het systeem tonen die voldoen aan
 1. ze zijn de afgelopen week aangepast
 2. ze bevatten de string "Main"
 
-<img width="1694" height="100" alt="image" src="https://github.com/user-attachments/assets/009b0c67-706f-4935-8271-43fd0134ef56" />
+<img width="1885" height="97" alt="image" src="https://github.com/user-attachments/assets/4e4174a0-a5f7-4b33-8396-4257e8831aae" />
+
 
 ## 1 b) Links:
 Wat is het verschil tussen een symbolische link en een harde link?\
 *Tip*: Wat gebeurt er in beide gevallen als je het doelbestand ('target') van de link verplaatst of verwijdert?
 
+In Linux is een harde link eigenlijk gewoon een extra naam voor hetzelfde bestand (hetzelfde inode). Daardoor blijft de harde link gewoon werken als het oorspronkelijke bestand wordt verplaatst of verwijderd, zolang er maar minstens één harde link naar dat inode bestaat. Het bestand wordt pas echt van de schijf verwijderd wanneer alle harde links weg zijn. Een harde link kan niet over verschillende filesystems heen en meestal ook niet naar directories verwijzen.
+
+Een symbolische link is daarentegen een apart bestand dat alleen het pad naar het doelbestand bevat, vergelijkbaar met een snelkoppeling. Als het doelbestand wordt verplaatst of verwijderd, raakt de symbolische link kapot omdat het pad niet meer klopt. Symbolische links kunnen wel naar directories wijzen en ook over verschillende filesystems heen werken.
 
 ## 1 c) Shell:
 Hoe kun je zien welke Shell je gebruikt? Hoe heet het startup script?
 
-
+Met het commando echo schell 
+<img width="968" height="103" alt="image" src="https://github.com/user-attachments/assets/5c053617-1cc7-472a-b09f-a129035e2662" />
+naam startup script: ~/.bashrc
 ## 1 d) Piping:
 Wat is het commando om alle processen met in de PID “100” te tonen?\
 (gebruik hierbij o.a. `grep`)
+
+<img width="955" height="557" alt="image" src="https://github.com/user-attachments/assets/4afaf9b8-39f9-45da-a3e3-33bd3fbf7fa1" />
 
 
 ## 1 e) Path:
 Hoe kun je je PATH-variabele aanpassen zodat je niet steeds `./filenaam` hoeft te typen, maar simpelweg `filenaam` kunt gebruiken om een bestand in de huidige directory uit te voeren?\
 Wat moet je toevoegen aan je shell startup script om deze wijziging permanent te maken?
+
+export PATH=$PATH:.
+deze regel moet toegevoegd worden aan het startup script: ~/.bashrc
 
 
 ## 1 f) Manual page:
@@ -55,24 +66,32 @@ Hoe kun je in de manual-pagina (met het commando `man`) zoeken naar een specifie
 Wat is het commando om verder te zoeken naar de volgende overeenkomst?\
 Hoe kun je een pagina omhoog of omlaag scrollen?
 
+<img width="970" height="675" alt="image" src="https://github.com/user-attachments/assets/d2d0008a-5d09-4886-99eb-ddcb906b47bc" />
+je kunt zoeken door /stringnaarkeuze
+omhoog: k, b
+omlaag: spatie, j
+
+
 ## 1 g) default directories:
+
 Wat is het doel van de volgende directories? Geef een korte beschrijving van wat er typisch in deze directories wordt opgeslagen:
 
-`/bin`\
-`/lib`\
-`/media`\
-`/boot`\
-`/proc`\
-`/mnt`\
-`/dev`\
-`/root`\
-`/sbin`\
-`/etc`\
-`/usr`\
-`/usr/share`\
-`/home`\
-`/usr/bin` en `/usr/sbin`\
-`/var`
+'/bin' – Basiscommando’s en uitvoerbare bestanden die door alle gebruikers nodig zijn (bv. ls, cp).
+'/lib' – Belangrijke bibliotheken die nodig zijn voor de binaries in /bin en /sbin.
+'/media' – Mount points voor verwisselbare media zoals USB-sticks, CD’s of externe schijven.
+'/boot' – Bestanden die nodig zijn om het systeem op te starten, zoals de kernel en bootloader.
+'/proc' – Virtueel bestandssysteem dat systeem- en procesinformatie bevat (runtime info van de kernel).
+'/mnt' – Tijdelijke mount points die je zelf kunt gebruiken om filesystems te koppelen.
+'/dev' – Apparaten en device-bestanden (bv. harde schijven, toetsenbord, terminals).
+'/root' – Home directory van de root-gebruiker.
+'/sbin' – Systeembinaries die meestal door de beheerder/root worden gebruikt (bv. fsck, ifconfig).
+'/etc' – Configuratiebestanden van het systeem en geïnstalleerde programma’s.
+'/usr' – Universele programma’s en bestanden voor gebruikers; tweede hiërarchie na /.
+'/usr/share' – Systeemonafhankelijke data, zoals documentatie, iconen, en sjablonen.
+'/home' – Home directories van normale gebruikers.
+'/usr/bin' – Binaries voor normale gebruikers die niet in /bin staan.
+'/usr/sbin' – Systeembinaries voor beheerders die niet in /sbin staan.
+'/var' – Variabele bestanden zoals logs, caches, mail en tijdelijke data die verandert tijdens runtime.
 
 ## 1 h) default directories:
 
@@ -82,6 +101,27 @@ Waar vind je de volgende bestanden en wat is hun functie in het systeem?
 2. De `man`-pagina's (binaries en gecomprimeerde bestanden, zoals `*.gz`)
 3. Configuratiebestanden voor netwerkinterfaces (interfaces) en hosts (hosts)
 
+1.
+mount /bin/mount of /usr/bin/mount - Mounten van filesystems
+ping /bin/ping of /usr/bin/ping - Netwerkverbinding testen via ICMP
+rm /bin/rm - Bestanden verwijderen
+mkfs /sbin/mkfs - Filesystem aanmaken op een schijf/partitie
+fdisk /sbin/fdisk - Partitioneren van harde schijven
+rsyslogd /sbin/rsyslogd - Logserver voor systeem- en applicatielogs
+grub /boot/grub of lilo /sbin/lilo - Bootloader voor het opstarten van Linux
+man /usr/bin/man - Commando om man-pagina's te openen
+man pages /usr/share/man/man[1-8]/ (bijv. ls.1.gz) - Documentatiebestanden van commando's en systeemfuncties
+interfaces /etc/network/interfaces - Configuratie van netwerkinterfaces (IP-adressen, gateways)
+hosts /etc/hosts - Lokaal hostnaam-resolutiebestand (koppelt hostnamen aan IP-adressen)
+
+2.
+man /usr/bin/man - Commando om man-pagina's te openen
+man pages /usr/share/man/man[1-8]/ (bijv. ls.1.gz) - Documentatiebestanden van commando's en systeemfuncties
+
+3.
+interfaces /etc/network/interfaces - Configuratie van netwerkinterfaces (IP-adressen, gateways)
+hosts /etc/hosts - Lokaal hostnaam-resolutiebestand (koppelt hostnamen aan IP-adressen)
+   
 
 # Opdracht 2 - Systeembeheer
 
@@ -169,6 +209,7 @@ Waar bevindt zich het uitvoerbare bestand (`executable`) voor `apache2`? Leg uit
 
 ## 5 e) Locatie van de `DocumentRoot` variabele
 In welk configuratiebestand wordt de `DocumentRoot`-variabele voor `apache2` gedefinieerd? Beschrijf kort hoe je dit bestand kunt vinden en openen.
+
 
 
 
