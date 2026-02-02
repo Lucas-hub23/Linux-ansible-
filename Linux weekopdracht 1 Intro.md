@@ -128,69 +128,130 @@ hosts /etc/hosts - Lokaal hostnaam-resolutiebestand (koppelt hostnamen aan IP-ad
 ## 2 a) Alias instellen voor home-directory
 Welk commando kun je gebruiken om ervoor te zorgen dat wanneer je `home` in de console invoert, de huidige directory automatisch navigeert naar je home-directory? Leg uit hoe dit werkt.
 
+<img width="1919" height="151" alt="image" src="https://github.com/user-attachments/assets/1d6f0b17-9690-4644-b098-d1c4fc5bbfb6" />
+
+
 ## 2 b) Overzicht van gemounte bestandssystemen
 Welk commando geeft een overzicht van alle gemounte bestandssystemen en de beschikbare opslagruimte?
+
+<img width="1906" height="347" alt="image" src="https://github.com/user-attachments/assets/2574b80b-e50a-49b8-8958-97a5abb52a0a" />
+
 
 ## 2 c) Het doel van `/proc`
 Waarvoor worden de bestanden in de `/proc` directory gebruikt? Beschrijf hun algemene functie binnen het systeem.
 
+dynamische virtuele bestanden die informatie over lopende sytemen en processen bevant
+voorbeeld:
+<img width="1919" height="292" alt="image" src="https://github.com/user-attachments/assets/5408778c-4ec4-4245-ae35-3437d87d8615" />
+
 ## 2 d) Specifieke bestanden in `/proc`
 In de directory `/proc` staan onder andere de volgende virtuele bestanden: `version`, `cpuinfo`, `meminfo`, en `ioports`. Welke informatie geven deze bestanden? Beschrijf kort de inhoud van elk bestand.
 
+version: Informatie over de kernelversie, compiler die gebruikt is en builddatum van de kernel
+cpuinfo: geeft details over cpu, zie screenshot 2c
+meminfo: informatie over geheugengebruik
+ioports: overzicht geheugen en I/O poorten (hardware mapping)
+<img width="1899" height="121" alt="image" src="https://github.com/user-attachments/assets/69cc7383-3d6c-43dd-a47b-c6ce8f85dd30" />
+
+
 ## 2 e) Device files voor harde schijven
 Wat zijn de namen van de device files waarmee de kernel de harde schijven kan benaderen? Geef een overzicht van de naamgevingsconventies voor verschillende typen opslagapparaten (IDE, SATA, SCSI, NVMe).
+/dev/hda → eerste IDE-schijf
+/dev/hdb → tweede IDE-schijf
+
+/dev/sda → eerste SCSI/SATA/USB-schijf
+/dev/sdb → tweede schijf
+
+/dev/nvme0n1 → eerste NVMe-schijf
+/dev/nvme1n1 → tweede NVMe-schijf
+
 
 ## 2 f) Systeemmeldingen bekijken
 Met welk commando kun je de laatste belangrijke systeemmeldingen (logs) bekijken? Beschrijf hoe je dit gebruikt om snel toegang te krijgen tot recente meldingen.
+<img width="1891" height="442" alt="image" src="https://github.com/user-attachments/assets/ff6d914f-42a6-40d3-afbe-21433536ac1d" />
+tail voor alleen het weergeven van de laatste 10 meldingen
 
 ## 2 g) Processen overzicht
 Met welk commando kun je een overzicht krijgen van alle lopende processen op het systeem? Leg uit hoe je hiermee processen kunt beheren of controleren.
+<img width="1915" height="392" alt="image" src="https://github.com/user-attachments/assets/7b921541-1e30-46fd-a006-819aca1dabdf" />
+
 
 ## 2 h) Services starten en instellen bij opstarten
 Hoe kun je een service starten op het systeem, en hoe stel je een service zo in dat deze automatisch start bij het opstarten van het systeem? Beschrijf de benodigde commando's en de instellingen die hiervoor nodig zijn.
-
+sudo systemctl start <service> - starten
+sudo systemctl enable <service> - starten bij opstarten
 
 # Opdracht 3 - Performance Monitoring
 
 ## 3 a) Overzicht van processen in `top`
 Het commando `top` geeft een overzicht van processen en hun resourcegebruik, waarbij standaard wordt gesorteerd op CPU-gebruik. Het sample-interval is standaard ingesteld op 5 seconden.
+<img width="1919" height="216" alt="image" src="https://github.com/user-attachments/assets/bf24ad14-5f5c-4d55-baae-1b8a1ef6c9f1" />
 
 Met welke toets kun je een "toggle" uitvoeren tussen een enkel overzicht en de "alternate display"? Dit toont een gesorteerd overzicht van de belangrijkste "consumers" van verschillende systeemresources.
+de toets t lijkt te togglen, f ook, maar  lijkt me het juiste antwoord
 
 ## 3 b) Analyse met `vmstat`
 Het `vmstat`-commando geeft informatie over processen, geheugen, paging, block I/O, traps, en CPU-activiteit. Voer het `vmstat`-commando uit en bekijk de kolommen onder het gedeelte "procs".
 
 1. Wat betekenen de velden "r" en "b" onder het gedeelte "procs"?
+r zijn processen die CPU willen gebruiken, b dormant processen wachtende op I/O
 2. Hoeveel interrupts en context switches per seconde worden er ongeveer gemeten?
+<img width="1226" height="155" alt="image" src="https://github.com/user-attachments/assets/a8eb8cf8-ab6b-4a29-bcd7-f4a40c5e6ccf" />
+50 interrupts
+0 context switches
 
 ## 3 c) Processor-informatie met `mpstat`
 Run het commando `mpstat -A`.
 
 Hoeveel processoren (CPU's) zijn er in je systeem?
-
+<img width="1919" height="737" alt="image" src="https://github.com/user-attachments/assets/990b087e-5e2f-41f2-b78d-b7e6043ed248" />
+Er lijkt een processor aanwezig: CPU 0
 
 # Opdracht 4 - Users en permissies
 
 ## 4 a) Uitleg van `rwx` permissies voor directories
 Leg uit wat de `rwx`-permissies betekenen wanneer ze worden toegepast op een directory. Beschrijf hoe deze rechten zich verhouden tot de toegangsmogelijkheden voor gebruikers.
 
+r: dit zijn read rechten, een gebruiker kan een dir 'uitlezen' met bijv ls
+w: dit zijn write rechten, een gebruiker kan bestanden verwijderen of aanpassen
+x: dit zijn execut rechten, een gebruiker kan navigeren binnen dirs
+
 ## 4 b) Rechten instellen op `rwxrwxrwx`
 Met welk commando kun je de rechten van een bestand instellen op `rwxrwxrwx`? Beschrijf de stappen en betekenis van de opdracht.
+chmod 777 bestandsnaam
+dit command zorgt ervoor dat user, group en others volledige permissies hebben op een file
+4 read, 2 write, 1 execute
+eerste positie voor de user, tweede voor de group, derde voor others
 
 ## 4 c) Groep van een gebruiker aanpassen
 Hoe kun je de primaire groep van een gebruiker wijzigen? Geef een voorbeeld van het commando en leg de syntaxis kort uit.
+sudo usermod -g (primaire groep) developers (group) jan (user) - primaire groep wijzigen
+sudo usermod -aG groep1,groep2 gebruikersnaam - aan groep toeveogen
 
 ## 4 d) Gebruikers met eigen SSH-sleutels aanmaken
 Creëer drie gebruikers die elk met hun eigen SSH-sleutel kunnen inloggen. Beschrijf de stappen om de gebruikers aan te maken en de SSH-sleutels in te stellen.
+<img width="1919" height="94" alt="image" src="https://github.com/user-attachments/assets/95db94c4-959b-4d04-af17-46c8b68c143f" />
+
+<img width="1910" height="732" alt="image" src="https://github.com/user-attachments/assets/2bcaa466-81d3-4e0f-b6b9-c4ae8b2b2e03" />
+<img width="1105" height="639" alt="image" src="https://github.com/user-attachments/assets/71641357-11bf-4342-b2de-739c9d0b4300" />
+sleutelpaar voor gebruiker bennie is ook aangemaakt, beloofd
 
 ## 4 e) Gebruiker toevoegen aan de `sudoers`-groep
 Maak één van de eerder aangemaakte gebruikers lid van de `sudoers`-groep, zodat deze gebruiker beheerrechten krijgt. Geef het benodigde commando en leg uit hoe je kunt verifiëren dat de gebruiker lid is van `sudoers`.
+<img width="1901" height="122" alt="image" src="https://github.com/user-attachments/assets/74c3df67-866c-4a3c-b58f-687e533c6e94" />
+
 
 ## 4 f) Gedeelde directory en groep aanmaken
 1. Maak in de home-directory van alle drie de gebruikers een directory met de naam `shared_dir`.
 2. Creëer een groep genaamd `shared_usr` en maak de drie gebruikers lid van deze groep.
 3. Geef de groep lees- en schrijfrechten op de `shared_dir` in elke home-directory.
 4. Controleer of de gebruikers elkaar toegang kunnen geven tot hun `shared_dir`-directory.
+
+<img width="1918" height="421" alt="image" src="https://github.com/user-attachments/assets/2a69c565-7c0c-45bb-8bdb-c205dbe12adb" />
+<img width="1905" height="97" alt="image" src="https://github.com/user-attachments/assets/aed9de0a-2bdc-43b3-8330-0c89b03844bc" />
+ik snap vraag 4 niet helemaal, de eigenaar van de shared_dir binnen de home dirs zijn zoals op de screenshot te zien de gebruikers zelf. verder heeft de groep shared_usr rwx rechten op de shared_dir. dus de gebruikers kunnen elkaar toegang geven tot hun shared_dir, maar deze hebben ze ook al via de group shared_usr. de rechten op de home dir zijn alleen nog niet goed ingesteld, waardoor je niet bij de shared_dir van een andere user kan komen; zie screenshot hieronder
+<img width="1883" height="102" alt="image" src="https://github.com/user-attachments/assets/675e260c-3cf7-4f2b-8458-c4ba9f6f4511" />
+
 
 
 # Opdracht 5 - Installeren van applicaties
@@ -209,6 +270,7 @@ Waar bevindt zich het uitvoerbare bestand (`executable`) voor `apache2`? Leg uit
 
 ## 5 e) Locatie van de `DocumentRoot` variabele
 In welk configuratiebestand wordt de `DocumentRoot`-variabele voor `apache2` gedefinieerd? Beschrijf kort hoe je dit bestand kunt vinden en openen.
+
 
 
 
