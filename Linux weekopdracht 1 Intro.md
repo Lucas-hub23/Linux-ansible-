@@ -258,18 +258,32 @@ ik snap vraag 4 niet helemaal, de eigenaar van de shared_dir binnen de home dirs
 
 ## 5 a) Extracten van `.tgz` en `.tar.gz` bestanden
 Veel Linux-software wordt geleverd in een zogenaamde “tarball” met extensies zoals `.tgz` of `.tar.gz`. Welke commando's gebruik je om zo'n bestand uit te pakken? Geef een voorbeeld met uitleg.
+<img width="1871" height="547" alt="image" src="https://github.com/user-attachments/assets/d5b32295-f13e-4138-be5f-804f1f694bbb" />
+<img width="1917" height="122" alt="image" src="https://github.com/user-attachments/assets/a63e49d3-dfcf-4902-bc4a-58ae9f39bf6a" />
+xzf: decrompiren, uitpakken en filename
 
 ## 5 b) Overzicht van geïnstalleerde pakketten met `dpkg`
 Met welk `dpkg`-commando kun je een lijst van alle geïnstalleerde pakketten opvragen? Beschrijf wat de output bevat en waarvoor dit handig is.
+<img width="1904" height="672" alt="image" src="https://github.com/user-attachments/assets/aa273abd-7d9d-4f1c-87cf-41af93c35cce" />
+hiermee kun je kijken welke pakketten zijn geinstalleerd . je ziet een beschrijving voor welke architectuur het pakket is, welke versie en een korte beschrijving van het pakket. dit is handig omdat je hiermee kunt contrelen welke software al geinstalleerd en klaar voor gerbuik is en of de geinstalleerde versie compatibel is met je systeem
 
 ## 5 c) Bestanden in een pakket opvragen met `dpkg`
 Met welk `dpkg`-commando kun je achterhalen welke bestanden er bij het pakket `apache2` horen? Geef een voorbeeld en beschrijf kort hoe de output te interpreteren is.
+dpkg -L apache2
+<img width="1827" height="260" alt="image" src="https://github.com/user-attachments/assets/22ffa8c7-e8e2-4bd7-930c-6fceca28e84a" />
+het toont alle filepaths die horen bij de package, in dit geval apache2
 
 ## 5 d) Locatie van `apache2` executable
 Waar bevindt zich het uitvoerbare bestand (`executable`) voor `apache2`? Leg uit hoe je dit kunt achterhalen.
+<img width="1908" height="58" alt="image" src="https://github.com/user-attachments/assets/cb7c8ebf-203c-4d79-92b0-9855efd42768" />
+je kunt dit achterhalen met het command: which packagenaam 
 
 ## 5 e) Locatie van de `DocumentRoot` variabele
 In welk configuratiebestand wordt de `DocumentRoot`-variabele voor `apache2` gedefinieerd? Beschrijf kort hoe je dit bestand kunt vinden en openen.
+je kunt het vinden met dit commando:
+<img width="1893" height="94" alt="image" src="https://github.com/user-attachments/assets/80cd57fd-e47b-4df0-8f9f-29665db32acb" />
+
+
 
 
 
