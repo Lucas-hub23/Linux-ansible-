@@ -98,6 +98,7 @@ Zie voorbeeld hieronder.
 4. **Logging en Foutmeldingen**:
    - Voeg meldingen toe zodat de gebruiker kan zien wat het script doet.
    - Geef foutmeldingen als er iets misgaat, bijvoorbeeld als een bestand niet succesvol kan worden gekopieerd.
+  
 Door het script heen maakt het script gebruik van echo/meldingen om aan te geven wat er mis gaat.
 
 Met deze instructies kun je een eenvoudig maar nuttig script maken dat je fotoâ€™s automatisch organiseert en beheert.
@@ -114,5 +115,6 @@ Met deze instructies kun je een eenvoudig maar nuttig script maken dat je fotoâ€
 <img width="492" height="54" alt="image" src="https://github.com/user-attachments/assets/4950b53d-2211-4958-a846-aa318698ffda" />
 
 <img width="561" height="59" alt="image" src="https://github.com/user-attachments/assets/5fff24e1-7c0d-4ddf-a4dd-48a391f9b476" />
+
 
 
