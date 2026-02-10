@@ -101,7 +101,6 @@ Zie voorbeeld hieronder.
   
 Door het script heen maakt het script gebruik van echo/meldingen om aan te geven wat er mis gaat.
 
-Met deze instructies kun je een eenvoudig maar nuttig script maken dat je fotoâ€™s automatisch organiseert en beheert.
 #Disclaimer: AI is gebruikt bij het schrijven/begrijpen van het script. Het scipt wordt in volledigheid begrepen door ons studenten en AI is alleen gebruikt als ondersteuning. 
 
 <img width="648" height="202" alt="image" src="https://github.com/user-attachments/assets/6edacb42-6987-43d7-aa90-78dd714e0347" />
@@ -115,6 +114,7 @@ Met deze instructies kun je een eenvoudig maar nuttig script maken dat je fotoâ€
 <img width="492" height="54" alt="image" src="https://github.com/user-attachments/assets/4950b53d-2211-4958-a846-aa318698ffda" />
 
 <img width="561" height="59" alt="image" src="https://github.com/user-attachments/assets/5fff24e1-7c0d-4ddf-a4dd-48a391f9b476" />
+
 
 
 
