@@ -82,17 +82,39 @@ In dit voorbeeld:
    - Controleer of er precies twee parameters zijn ingevoerd.
    - Controleer of de tweede parameter geldig is (“maand” of “week”).
 
+<img width="506" height="63" alt="image" src="https://github.com/user-attachments/assets/5228e2b9-eac6-422f-8e00-4ed030c49a96" />
 2. **Maak de Mappen aan en Verplaats Foto's**:
    - Gebruik bestandsinformatie (zoals wijzigingsdatum) om foto’s in de juiste map te plaatsen.
    - Voor “maand” maakt het script mappen aan op basis van jaar en maand.
    - Voor “week” maakt het script mappen aan op basis van het weeknummer van het jaar.
+Zie voorbeeld hieronder. 
 
 3. **Hashverificatie voor Verwijdering**:
    - Na het kopiëren van een foto, vergelijk je de hash (met `md5sum`) van de bron en de doelkopie.
    - Verwijder de originele foto alleen als de hashwaarden overeenkomen, zodat je zeker weet dat de kopie identiek is.
 
+<img width="576" height="192" alt="image" src="https://github.com/user-attachments/assets/7ad0367e-4c54-4720-b8b6-094da6c586a2" />
+
 4. **Logging en Foutmeldingen**:
    - Voeg meldingen toe zodat de gebruiker kan zien wat het script doet.
    - Geef foutmeldingen als er iets misgaat, bijvoorbeeld als een bestand niet succesvol kan worden gekopieerd.
+  
+Door het script heen maakt het script gebruik van echo/meldingen om aan te geven wat er mis gaat.
 
-Met deze instructies kun je een eenvoudig maar nuttig script maken dat je foto’s automatisch organiseert en beheert.
+#Disclaimer: AI is gebruikt bij het schrijven/begrijpen van het script. Het scipt wordt in volledigheid begrepen door ons studenten en AI is alleen gebruikt als ondersteuning. 
+
+<img width="648" height="202" alt="image" src="https://github.com/user-attachments/assets/6edacb42-6987-43d7-aa90-78dd714e0347" />
+
+<img width="843" height="192" alt="image" src="https://github.com/user-attachments/assets/ddf3e6c8-e20c-41cd-90f3-bb9cc958e170" />
+
+<img width="474" height="74" alt="image" src="https://github.com/user-attachments/assets/9aee346c-2e15-47ee-9b2d-fe6f1ee990d7" />
+
+<img width="518" height="79" alt="image" src="https://github.com/user-attachments/assets/c306aa58-e8c9-429b-bd14-b62d5a56efb6" />
+
+<img width="492" height="54" alt="image" src="https://github.com/user-attachments/assets/4950b53d-2211-4958-a846-aa318698ffda" />
+
+<img width="561" height="59" alt="image" src="https://github.com/user-attachments/assets/5fff24e1-7c0d-4ddf-a4dd-48a391f9b476" />
+
+
+
+
