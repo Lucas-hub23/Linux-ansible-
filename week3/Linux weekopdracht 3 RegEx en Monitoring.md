@@ -74,6 +74,7 @@ wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /
 <img width="897" height="428" alt="image" src="https://github.com/user-attachments/assets/40f85b86-71df-4252-bdee-5784de829b75" />
 <img width="1848" height="984" alt="image" src="https://github.com/user-attachments/assets/c915dd0f-4f0c-42b3-a09f-c68a617764b9" />
 op deze afbeelding zie je de logs mooi verzameld in netdata
+<img width="1488" height="95" alt="image" src="https://github.com/user-attachments/assets/646ce4b7-f331-4208-a835-5ee6de4f21b1" />
 
 
 
@@ -88,5 +89,6 @@ Installeer op de server van 2 b) een webserver (zoals Apache of NGINX) om bijvoo
 ## 2 d) Hardening van de Webserver
 
 Zorg voor een hardening-script dat de Webserver van 2 b/c) beter beveiligt dan de standaardinstellingen. Zoek op wat system hardening betekend en pas een hardening techniek toe. Leg uit hoe je dit gedaan heb en laat hier zoals altijd screenshots van zien.
+
 
 
