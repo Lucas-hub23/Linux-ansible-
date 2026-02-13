@@ -1,0 +1,18 @@
+---
+- name: Update server
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: Upgrade all packages
+      ansible.builtin.apt:
+        upgrade: full
+
+    - name: Update Ansible via apt
+      ansible.builtin.apt:
+        name: ansible
+        state: latest
