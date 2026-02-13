@@ -1,7 +1,16 @@
 ---
-- name: configureer netdata client
-  hosts: test
+- name: configureer netdata server
+  hosts: clients
   become: yes
   gather_facts: false
   roles:
-    - { role: netdata, tags: ["netdata"] }
+    - { role: netdata_server, tags: ["netdata_server"] }
+
+
+- name: configureer netdata client
+  hosts: clients
+  become: yes
+  gather_facts: false
+  roles:
+    - { role: netdata_clients, tags: ["netdata_clients"] }
+

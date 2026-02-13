@@ -1,6 +1,6 @@
 ---
 - name: configureer wordpress
-  hosts: localhost
+  hosts: clients
   become: yes
   gather_facts: false
   roles:
