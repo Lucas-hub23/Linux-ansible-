@@ -1,0 +1,7 @@
+---
+- name: configureer netdata client
+  hosts: clients
+  become: yes
+  gather_facts: false
+  roles:
+    - { role: netdata, tags: ["netdata"] }
