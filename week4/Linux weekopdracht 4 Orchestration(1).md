@@ -55,3 +55,9 @@ Na voltooiing van deze opdracht moet je het volgende hebben:
 - Een werkende monitorserver met Ansible.
 - Een script dat nieuwe Linux-clients automatisch registreert en monitort.
 - Een Git-repository met al je werk, inclusief scripts en documentatie.
+
+<img width="1564" height="535" alt="image" src="https://github.com/user-attachments/assets/b3c4ee6b-455f-4ef8-b48d-80b03d1f5b0c" />
+het ansible script hebben we uitgerold waardoor de nieuwe vm nu ook als netdata client is geconfigureerd. roles/netdata
+<img width="1468" height="136" alt="image" src="https://github.com/user-attachments/assets/a28b793d-641e-4ee0-afad-6b4bd7e9474b" />
+hier kunnen we zien dat alle servers gemonitord worden binnen netdata.
+
