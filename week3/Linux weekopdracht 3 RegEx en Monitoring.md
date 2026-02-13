@@ -68,12 +68,14 @@ Het verschil tussen logging en monitoren, is bij logging is het alleen het vastl
 Zet een tweede Linux server op (of herbruik de server die je al had voor weken 1 en 2) die door de monitorserver uit opdracht 2 a) gemonitord zal worden.
 > Deze server moet dus logging data kunnen verzenden naar de monitoring server van 2 a).
 
-<img width="2551" height="448" alt="image" src="https://github.com/user-attachments/assets/d63a5566-193d-4dca-9aa4-f886cb84355c" />
+<img width="978" height="72" alt="image" src="https://github.com/user-attachments/assets/b369550e-bb94-44ca-9869-076ce9c57661" />
+<img width="1890" height="348" alt="image" src="https://github.com/user-attachments/assets/39350844-f6fa-484d-8648-9426adf8b6e8" />
+op deze screenshots is te zien hoe de syslogs worden verstuurd en centraal inzichtelijk zijn op de logserver. vanaf de runner worden de logs verzameld binnen /var/log/syslog op de server.
 dit command gebruiken we om netdata te installeren. het is een bash script dat alle benodigde dependencies installeert. 
 wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh
 <img width="897" height="428" alt="image" src="https://github.com/user-attachments/assets/40f85b86-71df-4252-bdee-5784de829b75" />
 <img width="1848" height="984" alt="image" src="https://github.com/user-attachments/assets/c915dd0f-4f0c-42b3-a09f-c68a617764b9" />
-op deze afbeelding zie je de logs mooi verzameld in netdata
+op deze afbeelding zie hoe netdata de nodes monitort op metrix als cpu gebruik en dat soort dingen. netdata is niet oorspronkelijk voor het uitlezen van syslogs, maar kan dit deels.
 <img width="1488" height="95" alt="image" src="https://github.com/user-attachments/assets/646ce4b7-f331-4208-a835-5ee6de4f21b1" />
 
 
@@ -112,6 +114,7 @@ Zorg voor een hardening-script dat de Webserver van 2 b/c) beter beveiligt dan d
 hardening is het beter beveiligen van een netwerkapparaat door openingen/deuren/poorten op een machine dicht te zetten. dit verkleint de kans dat aanvallers een systeem weten binnen te dringen. in week3 staat het hardening script. dit script weigert al het verkeer, behalve het verkeer wat nodig is door poorten ddicht te zetten met ufw regels. 
 <img width="791" height="918" alt="image" src="https://github.com/user-attachments/assets/e3098968-2b7a-4b33-a1fb-d6ec6d5f94f7" />
 <img width="504" height="238" alt="image" src="https://github.com/user-attachments/assets/768d0ca6-604f-4374-b343-a69e1697e704" />
+
 
 
 
