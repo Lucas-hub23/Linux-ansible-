@@ -5,3 +5,4 @@
   gather_facts: false
   roles:
     - { role: wordpress, tags: ["wordpress"] }
+    -  { role: apache2, tags: ["apache2"] }
