@@ -5,6 +5,9 @@
   gather_facts: false
   roles:
     - { role: wordpress, tags: ["wordpress"] }
+<<<<<<< HEAD
     - { role: wordpress_user, tags: ["wordpress_user"] }
     - { role: mariadb, tags: ["mariadb"] }
+=======
+>>>>>>> 40fc2a046c950868f46a07d4aa94a41f9cefafcd
     - { role: apache2, tags: ["apache2"] }
