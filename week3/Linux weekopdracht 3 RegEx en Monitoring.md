@@ -95,10 +95,14 @@ $ sudo apt install software-properties-common
 $ sudo add-apt-repository --yes --update ppa:ansible/ansible
 $ sudo apt install ansible
 <img width="818" height="172" alt="image" src="https://github.com/user-attachments/assets/0e001b1a-0d62-4ffa-89af-d62593f9e165" />
+<img width="1889" height="76" alt="image" src="https://github.com/user-attachments/assets/8b05b716-2af3-4f8b-b016-4c826f5b8a88" />
+ansible installeert wordpress in de webroot die geserveerd wordt door apache2. hier zien we dat alle tasks succesvol zijn doorlopen. zie playbooks/roles/wordpress/tasks/main.yml voor geinstalleerde deps. 
+
 
 ## 2 d) Hardening van de Webserver
 
 Zorg voor een hardening-script dat de Webserver van 2 b/c) beter beveiligt dan de standaardinstellingen. Zoek op wat system hardening betekend en pas een hardening techniek toe. Leg uit hoe je dit gedaan heb en laat hier zoals altijd screenshots van zien.
+
 
 
 
