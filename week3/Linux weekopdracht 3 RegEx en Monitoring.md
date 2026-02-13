@@ -43,6 +43,9 @@ Je kunt de regex als volgt controleren:
 grep -E -o "<YOUR_REGEX>" apache-access-log.txt
 ```
 
+
+<img width="1411" height="59" alt="image" src="https://github.com/user-attachments/assets/a062e5ae-4658-49a0-81ce-3e403a99d8d1" />
+
 # Opdracht 2: Monitoring en Logging
 
 ## 2 a) Setup van een Monitoring/Logging Server
@@ -114,6 +117,7 @@ Zorg voor een hardening-script dat de Webserver van 2 b/c) beter beveiligt dan d
 hardening is het beter beveiligen van een netwerkapparaat door openingen/deuren/poorten op een machine dicht te zetten. dit verkleint de kans dat aanvallers een systeem weten binnen te dringen. in week3 staat het hardening script. dit script weigert al het verkeer, behalve het verkeer wat nodig is door poorten ddicht te zetten met ufw regels. 
 <img width="791" height="918" alt="image" src="https://github.com/user-attachments/assets/e3098968-2b7a-4b33-a1fb-d6ec6d5f94f7" />
 <img width="504" height="238" alt="image" src="https://github.com/user-attachments/assets/768d0ca6-604f-4374-b343-a69e1697e704" />
+
 
 
 
