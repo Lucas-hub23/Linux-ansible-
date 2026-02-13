@@ -1,0 +1,23 @@
+# /etc/rsyslog.conf - Beheerd door Ansible
+
+module(load="imuxsock")
+module(load="imklog")
+module(load="imtcp")
+
+input(type="imtcp" port="514")
+
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+$FileOwner root
+$FileGroup adm
+$FileCreateMode 0640
+$DirCreateMode 0755
+$Umask 0022
+
+auth,authpriv.*                 /var/log/auth.log
+*.*;auth,authpriv.none          -/var/log/syslog
+kern.*                          -/var/log/kern.log
+mail.*                          -/var/log/mail.log
+mail.err                        /var/log/mail.err
+*.emerg                         :omusrmsg:*
+
+$IncludeConfig /etc/rsyslog.d/*.conf
