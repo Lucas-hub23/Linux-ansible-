@@ -97,12 +97,21 @@ $ sudo apt install ansible
 <img width="818" height="172" alt="image" src="https://github.com/user-attachments/assets/0e001b1a-0d62-4ffa-89af-d62593f9e165" />
 <img width="1889" height="76" alt="image" src="https://github.com/user-attachments/assets/8b05b716-2af3-4f8b-b016-4c826f5b8a88" />
 ansible installeert wordpress in de webroot die geserveerd wordt door apache2. hier zien we dat alle tasks succesvol zijn doorlopen. zie playbooks/roles/wordpress/tasks/main.yml voor geinstalleerde deps. 
+<img width="1867" height="991" alt="image" src="https://github.com/user-attachments/assets/0f6758cd-de83-4ff9-acf7-a24399f92d41" />
+<img width="734" height="127" alt="image" src="https://github.com/user-attachments/assets/bdf8f4de-750a-4aaf-aa75-c7c9271720af" />
+er gaat nog iets fout bij het configureren van de datase, dit wordt gefixt in week 5. Vermodelijk een rechten probleem. 
+<img width="1479" height="407" alt="image" src="https://github.com/user-attachments/assets/09444498-dc86-429a-90bd-c846e23bef6f" />
+we kunnen terugzien in netdata dat er iets fout gaat bij het 
+
 
 
 ## 2 d) Hardening van de Webserver
 
 Zorg voor een hardening-script dat de Webserver van 2 b/c) beter beveiligt dan de standaardinstellingen. Zoek op wat system hardening betekend en pas een hardening techniek toe. Leg uit hoe je dit gedaan heb en laat hier zoals altijd screenshots van zien.
 
+hardening is het beter beveiligen van een netwerkapparaat door openingen/deuren/poorten op een machine dicht te zetten. dit verkleint de kans dat aanvallers een systeem weten binnen te dringen. in week3 staat het hardening script. dit script weigert al het verkeer, behalve het verkeer wat nodig is door poorten ddicht te zetten met ufw regels. 
+<img width="791" height="918" alt="image" src="https://github.com/user-attachments/assets/e3098968-2b7a-4b33-a1fb-d6ec6d5f94f7" />
+<img width="504" height="238" alt="image" src="https://github.com/user-attachments/assets/768d0ca6-604f-4374-b343-a69e1697e704" />
 
 
 
