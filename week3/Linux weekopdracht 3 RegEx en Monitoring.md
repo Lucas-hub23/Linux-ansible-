@@ -58,17 +58,37 @@ Als logging/monitoring tools kun je de volgende opties gebruiken:
 
 > Zorg dat je per optie uit kunt leggen hoe deze zou werken en wat de voor en nadelen zouden zijn aan het gebruik van de optie. Leg ook het verschil tussen logging en monitoring uit.
 
+Syslog is lichtgewicht en komt samen met zowat elke linux distributie. Het heeft geen visualisatie en is minimaal. geen alerting of verdere dataanalyse. 
+Netdata heeft al wel visualisatie, maar nog geen log aggregatie, maar nog niet centraal geaggregeerd
+Prometheus + graphana is het complete plaatje, het is alleen wel lastiger te configuren. het zijn twee losse componenten die opzich geconfigureerd moeten worden en daarna aan elkaar gekoppeld.
+Het verschil tussen logging en monitoren, is bij logging is het alleen het vastleggen van logs. Bij monitoring is het de logs verwerken en daadwerkelijk monitoren/in de gaten houden. Voorbeeld: cpu van vm word 100% gebruikt is de log, de melding die op basis van deze log wordt gemaakt in een dashboard of iets dergelijks is de monitoring.
+
 ## 2 b) Setup van een Server voor Monitoring
 
 Zet een tweede Linux server op (of herbruik de server die je al had voor weken 1 en 2) die door de monitorserver uit opdracht 2 a) gemonitord zal worden.
 > Deze server moet dus logging data kunnen verzenden naar de monitoring server van 2 a).
+
+<img width="2551" height="448" alt="image" src="https://github.com/user-attachments/assets/d63a5566-193d-4dca-9aa4-f886cb84355c" />
+dit command gebruiken we om netdata te installeren. het is een bash script dat alle benodigde dependencies installeert. 
+wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh
+<img width="897" height="428" alt="image" src="https://github.com/user-attachments/assets/40f85b86-71df-4252-bdee-5784de829b75" />
+<img width="1848" height="984" alt="image" src="https://github.com/user-attachments/assets/c915dd0f-4f0c-42b3-a09f-c68a617764b9" />
+op deze afbeelding zie je de logs mooi verzameld in netdata
+<img width="1488" height="95" alt="image" src="https://github.com/user-attachments/assets/646ce4b7-f331-4208-a835-5ee6de4f21b1" />
+
+
 
 ## 2 c) Installatie van een Webserver
 
 Installeer op de server van 2 b) een webserver (zoals Apache of NGINX) om bijvoorbeeld een WordPress applicatie op te hosten. De logs van deze applicaties dienen te worden verzameld door de logserver. Deze verzamelde logs moeten inzichtelijk worden gemaakt in de monitoring stack.
 > Als anternatief zouden jullie een Flask webapp (zoals jullie in jaar 1 gebouwd hebben) of een bestaande opensource webapp van de [GitHub awesome-selfhosted lijst](https://github.com/awesome-selfhosted/awesome-selfhosted) kunnen hosten
 
+<img width="599" height="168" alt="image" src="https://github.com/user-attachments/assets/4ae154f4-cf40-4d48-965d-9787a9768cff" />
+
 
 ## 2 d) Hardening van de Webserver
 
 Zorg voor een hardening-script dat de Webserver van 2 b/c) beter beveiligt dan de standaardinstellingen. Zoek op wat system hardening betekend en pas een hardening techniek toe. Leg uit hoe je dit gedaan heb en laat hier zoals altijd screenshots van zien.
+
+
+
