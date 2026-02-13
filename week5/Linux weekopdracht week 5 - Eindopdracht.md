@@ -100,6 +100,10 @@ Wordpress werkt op allebei de servers. db is aangemaakt, gebruikers zijn aangema
 Dit gebeurt via netdata en rsyslog
 
 - Een bijgewerkte en complete Git-repository.
-- Een opname waar jullie de werkende omgeving demonstreren.
 
+https://github.com/Lucas-hub23/Linux-ansible- 
+
+- Een opname waar jullie de werkende omgeving demonstreren.
+Ik (Lucas) demonstreer de omgeving graag een keer in persoon als dit nodig is. Ik elke dag op school van 9-5.
+Disclaimer: ik heb op de server vm een publiek ip gezet, omdat de windows machine erg traag was en dit het werken enorm veel toegankelijker maakt. Vandaar dat het ip bij de demonstratie ook anders is dan het 172.16.0.0/24 subnet. De vm's zijn goed ingesteld, maar bastion en de windows server werken niet echt mee, dus is de server ook even client voor het testen van wordpress. De opdracht is verder helemaal volgens de instructies uitgevoerd. 
 
