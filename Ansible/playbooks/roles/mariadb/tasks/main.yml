@@ -12,7 +12,7 @@
 
 - name: 3. Maak de databasegebruiker aan en geef rechten op de database
   community.mysql.mysql_user:
-    name: "wordpress_gebruiker"
+    name: "wordpress_user"
     password: "Poepaap123"
     priv: "wordpress_database.*:ALL"
     state: present
