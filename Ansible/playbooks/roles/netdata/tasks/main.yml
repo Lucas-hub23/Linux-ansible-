@@ -1,0 +1,32 @@
+---
+- name: Install dependencies
+  ansible.builtin.apt:
+    name: [curl, wget, bash]
+    state: present
+    update_cache: true
+
+- name: Download netdata install script
+  ansible.builtin.get_url:
+    url: https://get.netdata.cloud/kickstart.sh
+    dest: /tmp/netdata-kickstart.sh
+    mode: '0755'
+
+- name: Install netdata
+  ansible.builtin.shell:
+    cmd: /tmp/netdata-kickstart.sh --non-interactive
+    creates: /usr/sbin/netdata
+
+- name: Deploy stream config
+  ansible.builtin.template:
+    src: stream.conf.j2
+    dest: /etc/netdata/stream.conf
+    owner: netdata
+    group: netdata
+    mode: '0640'
+  notify: Restart netdata
+
+- name: Ensure Netdata is enabled and running
+  ansible.builtin.systemd:
+    name: netdata
+    enabled: true
+    state: started
