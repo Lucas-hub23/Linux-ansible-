@@ -1,6 +1,7 @@
 ---
 - name: configureer wordpress
-  hosts: clients
-  gathers_factes: false
+  hosts: localhost
+  become: yes
+  gather_facts: false
   roles:
     - { role: wordpress, tags: ["wordpress"] }

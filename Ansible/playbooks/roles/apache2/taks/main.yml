@@ -1,0 +1,32 @@
+- name: 1. Activeer de Apache rewrite module (cruciaal voor permalinks)
+  community.general.apache2_module:
+    state: present
+    name: rewrite
+
+- name: 2. Kopieer de Virtual Host configuratie voor WordPress
+  ansible.builtin.template:
+    src: wordpress.conf.j2
+    dest: /etc/apache2/sites-available/wordpress.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: 3. Activeer de WordPress site configuratie (met a2ensite)
+  ansible.builtin.command: a2ensite wordpress.conf
+  args:
+    creates: /etc/apache2/sites-enabled/wordpress.conf
+
+- name: 4. Deactiveer de standaard Apache welcome pagina (000-default)
+  ansible.builtin.command: a2dissite 000-default.conf
+  args:
+    removes: /etc/apache2/sites-enabled/000-default.conf
+
+- name: 4b. Verwijder de standaard Apache welkomstpagina (index.html)
+  ansible.builtin.file:
+    path: /var/www/html/index.html
+    state: absent
+
+- name: 5. Herstart Apache om alle nieuwe configuraties toe te passen
+  ansible.builtin.service:
+    name: apache2
+    state: restarted
