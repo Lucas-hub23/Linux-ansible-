@@ -84,11 +84,22 @@ Installeer op de server van 2 b) een webserver (zoals Apache of NGINX) om bijvoo
 > Als anternatief zouden jullie een Flask webapp (zoals jullie in jaar 1 gebouwd hebben) of een bestaande opensource webapp van de [GitHub awesome-selfhosted lijst](https://github.com/awesome-selfhosted/awesome-selfhosted) kunnen hosten
 
 <img width="599" height="168" alt="image" src="https://github.com/user-attachments/assets/4ae154f4-cf40-4d48-965d-9787a9768cff" />
+<img width="631" height="232" alt="image" src="https://github.com/user-attachments/assets/e31573f2-06e8-4efd-9f5f-94cdd33acee1" />
+voor het deployen van wordpress op de vm maken wij gebruik van een ansible script dat door lucas zelf al een keer is geschreven. we lopen hier wellicht een beetje op de stappen vooruit, maar ik heb lijkt me omstrijdig om wordpress handmatig te installeren en configureren. de scripts die hiervoor gebruikt worden staan ook op dit github account, de repo staat open en heet proxmox-ansible. 
+<img width="1885" height="197" alt="image" src="https://github.com/user-attachments/assets/8973eafd-edd9-41d1-928e-45f27c346345" />
+op screenshot hierboven is te zien hoe we de client kunnen bereiken met een -m ping. we kunnen nu de scripts runnen en hiermee wordpress installeren en configureren. de monitoring nemen we in we in opdracht 4 mee, dit doe ik nu nog handmatig. 
 
+ansible installatie:
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
+<img width="818" height="172" alt="image" src="https://github.com/user-attachments/assets/0e001b1a-0d62-4ffa-89af-d62593f9e165" />
 
 ## 2 d) Hardening van de Webserver
 
 Zorg voor een hardening-script dat de Webserver van 2 b/c) beter beveiligt dan de standaardinstellingen. Zoek op wat system hardening betekend en pas een hardening techniek toe. Leg uit hoe je dit gedaan heb en laat hier zoals altijd screenshots van zien.
+
 
 
 
