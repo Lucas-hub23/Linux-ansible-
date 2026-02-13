@@ -6,16 +6,16 @@
 
 - name: 2. Creëer de WordPress database uit variabele
   community.mysql.mysql_db:
-    name: "{{ wp_db_name }}"
+    name: "wordpress_database"
     state: present
     # Gebruik de socket voor lokale root-connectie (veiliger dan een DB root wachtwoord in de playbook)
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
 - name: 3. Maak de databasegebruiker aan en geef rechten op de database
   community.mysql.mysql_user:
-    name: "{{ wp_db_user }}"
-    password: "{{ wp_db_password }}"
-    priv: "{{ wp_db_name }}.*:ALL"
+    name: "wordpress_gebruiker"
+    password: "Poepaap123"
+    priv: "wordpress_database.*:ALL"
     state: present
     login_unix_socket: /var/run/mysqld/mysqld.sock
 
@@ -23,14 +23,14 @@
 - name: 4. Genereer wp-config.php van de template
   ansible.builtin.template:
     src: wp-config.php.j2
-    dest: "{{ wordpress_install_dir }}/wp-config.php"
+    dest: "var/www/html/wp-config.php"
     owner: root
     group: root
     mode: '0644'
 
 - name: 5. Stel www-data in als eigenaar en groep van de WordPress-bestanden
   ansible.builtin.file:
-    path: "{{ wordpress_install_dir }}"
+    path: "var/www/html"
     owner: www-data
     group: www-data
     recurse: yes
@@ -38,7 +38,7 @@
 
 - name: 6. Stel schrijfpermissies (0775) in voor essentiële mappen
   ansible.builtin.file:
-    path: "{{ wordpress_install_dir }}/{{ item }}"
+    path: "/var/www/html/{{ item }}"
     owner: www-data
     group: www-data
     mode: '0775'
