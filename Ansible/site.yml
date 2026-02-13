@@ -1,0 +1,12 @@
+---
+- name: Update servers
+  import_playbook: playbooks/update_orch_server.yml
+
+- name: Install Docker
+  import_playbook: playbooks/docker.yml
+
+- name: Install and configure Netdata
+  import_playbook: playbooks/netdata.yml
+
+- name: Install and configure WordPress
+  import_playbook: playbooks/wordpress.yml
