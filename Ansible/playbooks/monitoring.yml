@@ -1,0 +1,6 @@
+---
+- name: configureer wordpress
+  hosts: clients
+  gathers_factes: false
+  roles:
+    - { role: wordpress, tags: ["wordpress"] }
