@@ -1,6 +1,6 @@
 ---
 - name: configureer netdata client
-  hosts: clients
+  hosts: test
   become: yes
   gather_facts: false
   roles:
