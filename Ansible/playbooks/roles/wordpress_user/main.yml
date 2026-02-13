@@ -11,11 +11,11 @@
     - { name: "wp_developer" }
 
 
-- name: 2. Voeg de unieke SSH publieke sleutels toe
-  ansible.posix.authorized_key:
-    user: "{{ item.name }}"
-    state: present
-    key: "{{ item.key }}" 
-  loop:
-    - { name: "wp_admin", key: "{{ ssh_key_admin }}" }
-    - { name: "wp_developer", key: "{{ ssh_key_developer }}" }
+#- name: 2. Voeg de unieke SSH publieke sleutels toe
+#  ansible.posix.authorized_key:
+#    user: "{{ item.name }}"
+#    state: present
+#    key: "{{ item.key }}" 
+#  loop:
+#    - { name: "wp_admin", key: "{{ ssh_key_admin }}" }
+#    - { name: "wp_developer", key: "{{ ssh_key_developer }}" }
